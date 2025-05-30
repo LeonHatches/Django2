@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Inicio</title>
+    </head>
+    
+    <body>
+        <h1>Este es el inicio de la Pag</h1>
+        <h2>Saludos desde Templates a:</h2>
+        User: {{ request.user }}<br>
+        ¿Esta autenticado? {{ request.user.is_authenticated }} <br>
+        {{request.get_full_path}} <br>
+        {{request.session}} <br>
+        {{request.get_host}} <br>
+        {{request.get_port}} <br>
+        <p>Esta sección es una minima bienvenida a mi pag con Django</p>
+        <p>Abajo está un bloque:</p>
+        {% block content %}
+        Reemplazame
+        {% endblock %}
+    </body>
+</html>

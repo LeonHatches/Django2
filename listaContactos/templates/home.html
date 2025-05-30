@@ -6,7 +6,9 @@
     
     <body>
         <h1>Este es el inicio de la Pag</h1>
-        <h2>Saludos desde Templates</h2>
+        <h2>Saludos desde Templates a:</h2>
+        User: {{ request.user }}<br>
+        ¿Esta autenticado? {{ request.user.is_authenticated }}
         <p>Esta sección es una minima bienvenida a mi pag con Django</p>
     </body>
 </html>

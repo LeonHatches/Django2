@@ -5,7 +5,8 @@ from django.http import HttpResponse
 def myHomeView(request, *args, **kwargs):
     print(args, kwargs)
     print(request.user)
-    return render (request, "home.html", {})
+    items=['Primero','Segundo','Tercero']
+    return render (request, "home.html", {'items': items})
 
 def anotherView(request):
     return HttpResponse('<h1>Esta es la otra página :)</h1>')

@@ -6,3 +6,4 @@ class Persona (models.Model):
     apellidos = models.CharField(max_length = 100)
     edad      = models.IntegerField()#(max_digits=3)
     menor     = models.BooleanField(default=False)
+    donador   = models.BooleanField()

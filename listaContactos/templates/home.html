@@ -1,6 +1,8 @@
 {% extends 'base.html'%}
 {% block content %}
 <h2> Hola desde un Bloque que he creado Yo</h2>
-{{request.user}} <br>
-{{request.user.is_authenticated}}
+    <p>
+        {{ myText }},
+        {{ myNumber }}
+    </p>
 {% endblock %}

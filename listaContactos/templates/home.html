@@ -11,8 +11,18 @@
     <li>{{ forloop.counter }} - {{ myItem }}
     {% if myItem == 33 %}
      - Este numerito es magiquito
-    {% elif myItem > 50 %}
-     - Este número es mayor que 50
+    {% endif %}
+
+    {% if myItem == 44 or myItem == 55 %}
+     - Este numerito es de los seleccionados
+    {% endif %}
+
+    {% if not myItem == 55 %}
+     - Este numerito no es 55
+    {% endif %}
+    
+    {% if myItem > 50 %}
+     - Este número es mayor que 5
     {% endif %}
     </li>
     {% endfor %}

@@ -8,10 +8,13 @@
 
 <ul>
     {% for myItem in myList %}
-    <li>Forloop Counter: {{ forloop.counter }} - {{ myItem }} </li>
-    <li>Forloop Counter0: {{ forloop.counter0 }} - {{ myItem }} </li>
-    {% if forloop.first %} <li> Este elemento: {{ myItem }} es el primero. </li> {% endif %}
-    {% if forloop.last %} <li> Este elemento: {{ myItem }} es el último. </li> {% endif %}
+    <li>{{ forloop.counter }} - {{ myItem }}
+    {% if myItem == 33 %}
+     - Este numerito es magiquito
+    {% elif myItem > 50 %}
+     - Este número es mayor que 50
+    {% endif %}
+    </li>
     {% endfor %}
 </ul>
 

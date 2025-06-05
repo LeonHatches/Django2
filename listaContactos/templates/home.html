@@ -8,7 +8,17 @@
 
 <ul>
     {% for myItem in myList %}
-    <li>{{ forloop.counter }} - {{ myItem }} </li>
+    <li>Forloop Counter: {{ forloop.counter }} - {{ myItem }} </li>
+    <li>Forloop Counter0: {{ forloop.counter0 }} - {{ myItem }} </li>
+    {% if forloop.first %} <li> Este elemento: {{ myItem }} es el primero. </li> {% endif %}
+    {% if forloop.last %} <li> Este elemento: {{ myItem }} es el último. </li> {% endif %}
+    {% endfor %}
+</ul>
+
+<ul>
+    {% for myItem in myList %}
+    <li>Forloop Revcounter: {{ forloop.revcounter }} - {{ myItem }} </li>
+    <li>Forloop Revcounter0: {{ forloop.revcounter0 }} - {{ myItem }} </li>
     {% endfor %}
 </ul>
 {% endblock %}

@@ -17,10 +17,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from inicio.views import myHomeView, anotherView, hiddenView
+from personas.views import personaTestView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', myHomeView, name='Página de Inicio'),
     path('another/', anotherView),
     path('hidden/', hiddenView),
+    path('persona/', personaTestView, name = 'otro')
 ]

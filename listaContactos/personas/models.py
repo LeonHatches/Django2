@@ -6,3 +6,6 @@ class Persona (models.Model):
     apellidos = models.TextField()
     edad      = models.TextField()
     menor     = models.BooleanField()
+
+    def __str__(self):
+        return self.nombres

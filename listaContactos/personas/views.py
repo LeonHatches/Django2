@@ -32,6 +32,7 @@ def personaCreateView(request):
 
 class personaListView(ListView):
     model = Persona
+    queryset = Persona.objects.filter(edad__lte='40')
 
 def personaDeleteView(request, myID):
     obj = get_object_or_404(Persona, id=myID)

@@ -1,0 +1,10 @@
+{% extends "personas/base.html" %}
+{% block title %}Detalle de Personas{% endblock  %}
+
+{% block content %}
+<h1>Detalle de Personas</h1>
+<h1> Nombre: {{object.nombres}} </h1>
+<h1> Apellidos: {{object.apellidos}} </h1>
+<h1> Edad: {{object.edad}} </h1>
+<h1> ¿Es menor de edad?: {% if object.menor %} SI {% else %} NO {% endif %}</h1>
+{% endblock  %}

@@ -9,7 +9,7 @@ class Persona (models.Model):
     menor     = models.BooleanField()
 
     def get_absolute_url (self):
-        return reverse('personas:browsing', kwargs={'myID': self.id})
+        return reverse('personas:persona-detail', kwargs={'pk': self.id})
 
     def __str__(self):
         return self.nombres

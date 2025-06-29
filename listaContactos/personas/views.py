@@ -28,3 +28,11 @@ def personaCreateView(request):
     }
 
     return render(request, 'personas/personasCreate.html', context)
+
+def personaListView (request):
+    queryset = Persona.objects.all
+
+    context = {
+        'objectList': queryset,
+    }
+    return render(request, 'personas/personasLista.html', context)

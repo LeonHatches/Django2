@@ -53,6 +53,6 @@ def personaDeleteView(request, myID):
 def personasShowObject (request, myID):
     obj = get_object_or_404(Persona, id=myID)
     context = {
-        'objecto': obj,
+        'objeto': obj,
     }
     return render(request, 'personas/descripcion.html', context)

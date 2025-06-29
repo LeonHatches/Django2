@@ -17,5 +17,5 @@ urlpatterns = [
     path('create/', personaCreateView.as_view(), name = 'persona-create'),
     path('', personaListView.as_view(), name = 'Listing'),
     path('<int:pk>/', personaDetailView.as_view(), name='persona-detail'),
-    path('<int:myID>/delete/', personaDeleteView, name='deleting'),
+    path('<int:pk>/delete/', personaDeleteView.as_view(), name='persona-delete'),
 ]

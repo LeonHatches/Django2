@@ -1,7 +1,8 @@
 from django.shortcuts import get_object_or_404, redirect, render
 from .models import Persona
 from .forms import PersonaForm
-from django.views.generic import ListView, DetailView, CreateView, UpdateView
+from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
+from django.urls import reverse_lazy
 
 # Create your views here.
 def personaTestView(request):
@@ -34,18 +35,9 @@ class personaListView(ListView):
     model = Persona
     queryset = Persona.objects.filter(edad__lte='40')
 
-def personaDeleteView(request, myID):
-    obj = get_object_or_404(Persona, id=myID)
-    if request.method == 'POST':
-        print("Se borro")
-        obj.delete()
-        return redirect('../../')
-    
-    context = {
-        'objecto': obj,
-    }
-
-    return render(request, 'personas/personasBorrar.html', context)
+class personaDeleteView (DeleteView):
+    model = Persona
+    success_url = reverse_lazy('persona:persona-list')
 
 def personasShowObject (request, myID):
     obj = get_object_or_404(Persona, id=myID)

@@ -7,11 +7,12 @@ from .views import (
     searchForHelp,
     personasShowObject,
     personaDetailView,
+    personaCreateView,
 )
 
 app_name = 'personas'
 urlpatterns = [
-    path('add/', personaCreateView, name = 'adding'),
+    path('create/', personaCreateView.as_view(), name = 'persona-create'),
     path('', personaListView.as_view(), name = 'Listing'),
     path('<int:pk>/', personaDetailView.as_view(), name='persona-detail'),
     path('<int:myID>/delete/', personaDeleteView, name='deleting'),

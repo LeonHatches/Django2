@@ -3,5 +3,5 @@ from django import forms
 class RawPersonaForm (forms.Form):
     nombres   = forms.CharField()
     apellidos = forms.CharField()
-    edad      = forms.IntegerField()
+    edad      = forms.IntegerField(initial=21)
     menor     = forms.BooleanField()

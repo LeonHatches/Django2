@@ -1,6 +1,7 @@
 from django.shortcuts import get_object_or_404, redirect, render
 from .models import Persona
 from .forms import PersonaForm
+from django.views.generic import ListView
 
 # Create your views here.
 def personaTestView(request):
@@ -29,13 +30,8 @@ def personaCreateView(request):
 
     return render(request, 'personas/personasCreate.html', context)
 
-def personaListView (request):
-    queryset = Persona.objects.all
-
-    context = {
-        'objectList': queryset,
-    }
-    return render(request, 'personas/personasLista.html', context)
+class personaListView(ListView):
+    model = Persona
 
 def personaDeleteView(request, myID):
     obj = get_object_or_404(Persona, id=myID)
